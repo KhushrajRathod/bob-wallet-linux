@@ -22,22 +22,13 @@ jobs:
         path: ~/.npm
         key: npm-${{ hashFiles('package-lock.json') }}
         restore-keys: npm-
-      
-    - name: Debug
-      run: pwd
-
-    - name: Debug
-      run: find .
-      
+            
     - name: Install deps
       run: npm i
     
     - name: Build
       run: npm run build && npx electron-builder build --linux --publish never
-      
-    - name: Debug
-      run: find .
-    
+          
     - name: Release
       uses: marvinpinto/action-automatic-releases@v1.2.1
       with:
