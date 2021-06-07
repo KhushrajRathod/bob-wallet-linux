@@ -13,6 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: Debug
+      run: pwd
+
+    - name: Debug
+      run: find .
+      
     - name: Install deps
       run: npm i
     
