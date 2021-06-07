@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:    
     - name: Clone
-      run: git clone https://github.com/kyokan/bob-wallet && cd bob-wallet
+      uses: actions/checkout@v2
+      with:
+        repository: 'kyokan/bob-wallet'
       
     - name: Debug
       run: pwd
