@@ -34,7 +34,7 @@ jobs:
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "Latest"
-        prerelease: true
+        prerelease: false
         title: "Unofficial Bob Linux Build"
         files: |
           release/Bob-*.AppImage
