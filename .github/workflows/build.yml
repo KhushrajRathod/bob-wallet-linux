@@ -10,9 +10,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    
+    steps:    
+    - name: Clone
+      run: git clone https://github.com/kyokan/bob-wallet && cd bob-wallet
+      
     - name: Debug
       run: pwd
 
