@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  schedule: 
+    - cron: "0 0 * * *"
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install deps
+      run: npm i
+    
+    - name: Build
+      run: npm run package-linux
+      
+    - name: Debug
+      run: find .
+    
+    - name: Release
+      uses: marvinpinto/action-automatic-releases@v1.2.1
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "Latest"
+        prerelease: true
+        title: "Unofficial Bob Linux Build"
+        files: |
+          release/Bob-*.AppImage
