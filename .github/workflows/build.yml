@@ -14,8 +14,7 @@ jobs:
     - name: Clone
       uses: actions/checkout@v2
       with:
-        repository: 'rithvikvibhu/bob-wallet'
-        ref: 'linux-build-deeplink'
+        repository: 'kyokan/bob-wallet'
           
     - name: Cache dependencies
       uses: actions/cache@v2
